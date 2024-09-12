@@ -1,0 +1,34 @@
+@font-face {
+    font-family: 'vazir';
+    src: url('./assets/fonts/number/vazir.eot') format('eot');
+    src : url('./assets/fonts/number/vazir.ttf') format('truetype'),
+    url('./assets/fonts/number/vazir.woff') format('woff');
+}
+
+@font-face {
+    font-family: "lalezar";
+    src: url(./assets/fonts/lalezar/Lalezar-Regular.ttf) format("ttf"),
+      url(./assets/fonts/lalezar/Lalezar-Regular.woff) format("woff");
+}
+
+html {
+  direction: rtl;
+}
+
+body{
+  font-family: vazir;
+}
+
+.font-lale {
+    font-family: lalezar;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
