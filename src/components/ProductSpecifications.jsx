@@ -1,5 +1,5 @@
 import { useForm } from 'react-hook-form';
-import { Input, Button } from "@nextui-org/react";
+import { Input, Button, Checkbox } from "@nextui-org/react";
 import { VscError } from 'react-icons/vsc';
 import { useState } from 'react';
 import ImageUploader from './ImageUploader';
@@ -17,7 +17,6 @@ export default function ProductSpecifications(props) {
     const { register, handleSubmit, watch, formState: { errors }, trigger  } = useForm({
         defaultValues: {
             product_weight: data.product_weight,
-            product_size: data.product_size,
             product_price: data.product_price,
             product_stock: data.product_stock,
             product_sku: data.product_sku,
@@ -37,7 +36,6 @@ export default function ProductSpecifications(props) {
         setData({
             ...data,
             product_weight: formDataWithImages.product_weight,
-            product_size: formDataWithImages.product_size,
             product_price: formDataWithImages.product_price,
             product_stock: formDataWithImages.product_stock,
             product_sku: formDataWithImages.product_sku,
@@ -94,20 +92,6 @@ export default function ProductSpecifications(props) {
                     <label className="w-full">
                         <Input
                             type="text"
-                            name="product_size"
-                            {...register("product_size", { required: true })}
-                            color="primary"
-                            variant={"bordered"}
-                            label="ابعاد محصول "
-                            className="w-ful"
-                        />
-                    </label>
-                    {errors.product_size && <p className="flex items-center text-red-600 text-sm py-2"><VscError className="ml-2" size={20} />لطفا ابعاد محصول را وارد کنید!</p>}
-                </div>
-                <div className="w-full mt-4">
-                    <label className="w-full">
-                        <Input
-                            type="text"
                             name="product_price"
                             {...register("product_price", {
                                 required: "لطفا قیمت محصول را وارد کنید!",
@@ -142,6 +126,11 @@ export default function ProductSpecifications(props) {
                         />
                     </label>
                     {errors.product_stock && <p className="flex items-center text-red-600 text-sm py-2"><VscError className="ml-2" size={20} />{errors.product_stock.message}</p>}
+                    <Checkbox 
+                        defaultSelected
+                        size="sm"
+                        className='p-0 mt-2'
+                    ><span className='ms-2 text-small'>موجودی محصول در کانال نمایش داده شود.</span></Checkbox>
                 </div>
                 <div className="w-full mt-4">
                     <label className="w-full">

@@ -13,7 +13,6 @@ export default function Content() {
         product_name: '',
         product_type: '',
         product_weight: '',
-        product_size: '',
         product_price: '',
         product_stock: '',
         product_sku: '',
